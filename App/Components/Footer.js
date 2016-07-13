@@ -6,26 +6,6 @@ import {
   Image
 } from 'react-native';
 
-const styles = StyleSheet.create({
-  footer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    height: 60,
-    backgroundColor: 'rgb(100, 60, 150)'
-  },
-  tab: {
-    alignSelf: 'center',
-  },
-  tabImage: {
-    alignSelf: 'center',
-  },
-  tabText: {
-    fontSize: 12,
-    color: 'white'
-  }
-});
-
 class Footer extends Component {
 
   render() {
@@ -54,5 +34,26 @@ class Footer extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  footer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    height: 60,
+    backgroundColor: 'rgb(100, 60, 150)'
+  },
+  tab: {
+    alignSelf: 'center',
+  },
+  tabImage: {
+    alignSelf: 'center',
+  },
+  tabText: {
+    fontSize: 12,
+    color: 'white'
+  }
+});
+
 
 export default Footer;

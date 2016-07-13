@@ -13,13 +13,6 @@ import {
 import Login from './App/Pages/Login';
 import Assistent from './App/Pages/Assistent';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'rgb(131, 92, 180)',
-  }
-});
-
 class Skoola extends Component {
   render() {
     return (
@@ -44,7 +37,13 @@ class Skoola extends Component {
       );
     }
   }
-
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'rgb(131, 92, 180)',
+  }
+});
 
 AppRegistry.registerComponent('Skoola', () => Skoola);

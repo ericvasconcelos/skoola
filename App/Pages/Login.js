@@ -10,60 +10,6 @@ import {
 } from 'react-native';
 import Assistent from './Assistent';
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 30,
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    backgroundColor: 'rgb(131, 92, 180)',
-  },
-  welcome: {
-    margin: 10,
-    fontSize: 36,
-    textAlign: 'center',
-    fontWeight: 'bold',
-    color: 'rgb(75, 235, 254)',
-  },
-  instructions: {
-    textAlign: 'center',
-    color: 'white',
-    marginBottom: 15,
-  },
-  input: {
-    height: 50,
-    padding: 10,
-    fontSize: 23,
-    borderWidth: 1,
-    borderColor: 'white',
-    borderRadius: 4,
-    color: 'white',
-    marginBottom: 10,
-  },
-  button: {
-    height: 50,
-    flexDirection: 'row',
-    backgroundColor: 'white',
-    borderColor: 'white',
-    borderWidth: 1,
-    borderRadius: 4,
-    marginBottom: 10,
-    marginTop: 10,
-    alignSelf: 'stretch',
-    justifyContent: 'center'
-  },
-  buttonText: {
-    fontSize: 23,
-    color: '#111',
-    alignSelf: 'center'
-  },
-  error: {
-    fontSize: 18,
-    color: 'white',
-    alignSelf: 'center'
-  },
-});
-
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -147,5 +93,59 @@ class Login extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 30,
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    backgroundColor: 'rgb(131, 92, 180)',
+  },
+  welcome: {
+    margin: 10,
+    fontSize: 36,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    color: 'rgb(75, 235, 254)',
+  },
+  instructions: {
+    textAlign: 'center',
+    color: 'white',
+    marginBottom: 15,
+  },
+  input: {
+    height: 50,
+    padding: 10,
+    fontSize: 23,
+    borderWidth: 1,
+    borderColor: 'white',
+    borderRadius: 4,
+    color: 'white',
+    marginBottom: 10,
+  },
+  button: {
+    height: 50,
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    borderColor: 'white',
+    borderWidth: 1,
+    borderRadius: 4,
+    marginBottom: 10,
+    marginTop: 10,
+    alignSelf: 'stretch',
+    justifyContent: 'center'
+  },
+  buttonText: {
+    fontSize: 23,
+    color: '#111',
+    alignSelf: 'center'
+  },
+  error: {
+    fontSize: 18,
+    color: 'white',
+    alignSelf: 'center'
+  },
+});
 
 export default Login;
