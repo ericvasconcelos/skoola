@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
@@ -9,14 +8,14 @@ import {
   ActivityIndicator
 } from 'react-native';
 
-class Login extends Component {
+class ForgetPassword extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: '',
+      user: this.props.user,
       password: '',
       isLoading: false,
-      error: false
+      message: false
     }
   }
 
@@ -27,37 +26,30 @@ class Login extends Component {
     });
 
     setTimeout(() => {
-      if (this.state.user === "Eric" && this.state.password === "1234") {
-        this.props.navigator.push({
-          id: 'Assistent',
-          passProps: { user: this.state.user }
-        });
-
+      if (this.state.user === 'eric') {
         this.setState({
           isLoading: false,
-          error: false,
-          user: '',
-          password: ''
+          message: 'Sua senha foi enviada por email',
         })
       } else {
         this.setState({
-          error: 'informações incorretas',
+          message: 'Esse email não existe em nosso banco de dados',
           isLoading: false
         })
       }
     }, 1000);
   }
 
-  _forgetPassword() {
+  _backLogin() {
     this.props.navigator.push({
-      id: 'ForgetPassword',
-      passProps: { user: this.state.user }
+      id: 'Login'
     });
   }
 
+
   render() {
     let showErr = (
-      this.state.error ? <Text style={ styles.error }> {this.state.error }</Text> : <View></View>
+      this.state.message ? <Text style={ styles.error }> {this.state.message }</Text> : <View></View>
     );
 
     return (
@@ -67,7 +59,7 @@ class Login extends Component {
           Skoola
         </Text>
         <Text style={styles.instructions}>
-          Fique por dentro das informações do seu filho na escola.
+          Sua senha será enviada por email.
         </Text>
 
         <TextInput
@@ -75,29 +67,22 @@ class Login extends Component {
           autoCapitalize="none"
           selectTextOnFocus={ true }
           placeholderTextColor="#aaa"
+          value={this.state.user}
           onChange={(val) => this.setState({ user: val.nativeEvent.text })}
           placeholder="Email" />
-
-        <TextInput
-          style={styles.input}
-          autoCapitalize="none"
-          secureTextEntry={ true }
-          placeholderTextColor="#aaa"
-          onChange={(val) => this.setState({ password: val.nativeEvent.text })}
-          placeholder="Senha" />
 
         <TouchableHighlight
           style={ styles.button }
           onPress={ this.onPress.bind(this) }
           underlayColor="#ddd" >
-          <Text style={ styles.buttonText}>Entrar</Text>
+          <Text style={ styles.buttonText}>Enviar</Text>
         </TouchableHighlight>
 
         <TouchableHighlight
           style={styles.forgetPassword}
           underlayColor="#ddd"
-          onPress={this._forgetPassword.bind(this)}>
-          <Text style={styles.forgetPasswordText}>Esqueceu sua senha?</Text>
+          onPress={this._backLogin.bind(this)}>
+          <Text style={styles.forgetPasswordText}>Voltar ao login</Text>
         </TouchableHighlight>
 
         { this.state.isLoading ? <View></View> : showErr }
@@ -174,4 +159,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default ForgetPassword;

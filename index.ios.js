@@ -11,6 +11,7 @@ import {
   Navigator
 } from 'react-native';
 import Login from './App/Pages/Login';
+import ForgetPassword from './App/Pages/ForgetPassword';
 import Assistent from './App/Pages/Assistent';
 
 class Skoola extends Component {
@@ -29,6 +30,11 @@ class Skoola extends Component {
     if (routeId === 'Login') {
       return (
         <Login navigator={navigator} />
+      );
+    }
+    if (routeId === 'ForgetPassword') {
+      return (
+        <ForgetPassword navigator={navigator} {...route.passProps} />
       );
     }
     if (routeId === 'Assistent') {
